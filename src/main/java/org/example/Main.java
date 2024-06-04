@@ -2,11 +2,12 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-
-//        문제 2 - 자동차 객체를 담을 변수를 만들어주세요.
+        System.out.println("문제 1 - 자동차 설계도를 만들어주세요.");
+        // class Car 하단에 생성
+        System.out.println("문제 2 - 자동차 객체를 연결될(담을) 변수를 만들어주세요.");
         Car car1 = new Car();
 
-//        문제 3 - 자동차 객체를 만들고 변수에 담아주세요.
+        System.out.println("문제 3 - 자동차 객체를 만들고 변수에 연결해(담아)주세요.");
         Car car2;
         car2 = new Car();
 
@@ -19,10 +20,8 @@ public class Main {
         car2.최고속력 = 250;
 
         System.out.println("문제 5 - 1개의 자동차가 3번 달리게 해주세요.");
-        car1.현재상태 = "달린다";
-
         for (int i = 0; i < 3; i++) {
-            System.out.println("car1 " + car1.차종 + "은(는) 지금 " + car1.현재상태);
+            car1.Run();
         }
 
         System.out.println("문제 6 - 객체를 사용하지 않고 두번째 플레이어를 만들어주세요.");
@@ -30,7 +29,7 @@ public class Main {
 
         System.out.println("== player ==");
         System.out.println(player.차종);
-        System.out.println(player.현재상태);
+        System.out.println(player.차량번호);
         System.out.println(player.최고속력);
         System.out.println("결과 : car1과 참조값이 같고 위에서 변경한 값이 반영된다.");
         System.out.println("====");
@@ -43,14 +42,16 @@ public class Main {
 
         cars[0].차종 = "넘버원";
         cars[0].차량번호 = "가가1";
+        cars[0].최고속력 = 100;
         cars[1].차종 = "넘버투";
         cars[1].차량번호 = "나나2";
+        cars[1].최고속력 = 200;
         cars[2].차종 = "넘버쓰리";
         cars[2].차량번호 = "다다3";
+        cars[2].최고속력 = 300;
 
         for (int i = 0; i < cars.length; i++) {
-            cars[i].현재상태 = "달린다";
-            System.out.println(cars[i].차종 + "이(가) 현재 " + cars[i].현재상태);
+            cars[i].Run();
         }
 
         System.out.println("====");
@@ -61,25 +62,27 @@ public class Main {
         cars[2].최고속력 = 320;
 
         for (int i = 0; i < cars.length; i++) {
-            cars[i].현재상태 = "달린다";
-            System.out.println(cars[i].차종 + "이(가) 현재 " + "최고속력 " + cars[i].최고속력 + "으로 " + cars[i].현재상태);
+            cars[i].Run();
         }
         System.out.println("====");
         System.out.println("문제9 - 번호가 다른 각각의 자동차가 서로 다른 최고속력으로 달리게 해주세요.");
 
         for (int i = 0; i < cars.length; i++) {
             cars[i].최고속력 = 100 + (10 * i);
-            System.out.println("차종 " + cars[i].차종 + " 번호 " + cars[i].차량번호 + "이(가) 현재 " + "최고속력 " + cars[i].최고속력 + "으로 " + cars[i].현재상태);
+            cars[i].Run();
         }
 
 
     }
 }
 
-//        문제 1 - 자동차 설계도를 만들어주세요.
 class Car {
     String 차종;
     String 차량번호;
-    String 현재상태 = "멈췄다";
     int 최고속력;
+
+    void Run() {
+        System.out.println(this.차량번호 + " , " + this.차종 + " is " + this.최고속력 + "km/h Run!");
+    }
+
 }
