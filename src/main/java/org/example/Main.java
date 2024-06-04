@@ -1,17 +1,33 @@
 package org.example;
 
-// 문제 : 객체화 없이 설계도에 있는 능력을 바로 사용해주세요.
-// 문제 : 아래 코드가 실행되도록 자동차 클래스를 만들어주세요.
+// 계산기 클래스를 정의하고
+// 합 함수와
+// a와 b를 비교하여 a가 크면 true를 아니면 false를 리턴하는 함수를 구현
 
 class Main {
     public static void main(String[] args) {
-        // 자동차.달리다();
-        Car.run();
+        int rs1 = Cal.sum(10, 20);
+        System.out.println(rs1);
+
+        boolean rs2 = Cal.is_a_bigger_than_b(10, 20);
+        System.out.println(rs2);
+        rs2 = Cal.is_a_bigger_than_b(240, 20);
+        System.out.println(rs2);
+        rs2 = Cal.is_a_bigger_than_b(20, 20);
+        System.out.println(rs2);
+
     }
 }
 
-class Car {
-    static void run() {
-        System.out.println("자동차가 달린다.");
+class Cal {
+    static int sum(int i, int j) {
+        return i + j;
+    }
+
+    static boolean is_a_bigger_than_b(int a, int b) {
+        if (a > b) {
+            return true;
+        }
+        return false;
     }
 }
