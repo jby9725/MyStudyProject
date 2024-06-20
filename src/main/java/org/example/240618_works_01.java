@@ -17,6 +17,8 @@
 //}
 //
 //class 사람 {
+//    int 나이;
+//    boolean 기혼여부;
 //}
 //
 //class 로봇 {
@@ -30,7 +32,7 @@
 //    }
 //
 //    static 사람 get사람() {
-//        return new 사람();
+//        return null;
 //    }
 //
 //    static 사람 get사람2() {
@@ -38,17 +40,23 @@
 //    }
 //
 //    static 사람 get사람3() {
-//        return new 사람();
+//        사람 a사람 = null;
+//        return a사람;
 //    }
 //
 //    static 사람 get사람4() {
-//        return new 사람();
+//        사람 a사람 = new 사람();
+//        return a사람;
 //    }
 //
 //    static 사람 get사람5(int i, boolean b) {
-//        return new 사람();
+//        사람 a사람 = new 사람();
+//        a사람.나이 = i;
+//        a사람.기혼여부 = b;
+//        return a사람;
 //    }
 //
 //    static void get사람6(int i, boolean b) {
+//        return;
 //    }
 //}
